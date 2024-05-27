@@ -34,11 +34,11 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.LoginTextBox = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -109,13 +109,13 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // LoginTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(43, 9);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(256, 33);
-            this.textBox1.TabIndex = 3;
+            this.LoginTextBox.Location = new System.Drawing.Point(43, 9);
+            this.LoginTextBox.Multiline = true;
+            this.LoginTextBox.Name = "LoginTextBox";
+            this.LoginTextBox.Size = new System.Drawing.Size(256, 33);
+            this.LoginTextBox.TabIndex = 3;
             // 
             // textBox2
             // 
@@ -142,13 +142,13 @@
             this.panel4.Size = new System.Drawing.Size(33, 33);
             this.panel4.TabIndex = 7;
             // 
-            // textBox3
+            // PasswordTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(43, 61);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(256, 33);
-            this.textBox3.TabIndex = 8;
+            this.PasswordTextBox.Location = new System.Drawing.Point(43, 61);
+            this.PasswordTextBox.Multiline = true;
+            this.PasswordTextBox.Name = "PasswordTextBox";
+            this.PasswordTextBox.Size = new System.Drawing.Size(256, 33);
+            this.PasswordTextBox.TabIndex = 8;
             // 
             // label1
             // 
@@ -185,13 +185,13 @@
             // 
             this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(165)))), ((int)(((byte)(38)))));
             this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel15.Controls.Add(this.textBox1);
+            this.panel15.Controls.Add(this.LoginTextBox);
             this.panel15.Controls.Add(this.textBox2);
             this.panel15.Controls.Add(this.panel3);
             this.panel15.Controls.Add(this.label2);
             this.panel15.Controls.Add(this.panel4);
             this.panel15.Controls.Add(this.label1);
-            this.panel15.Controls.Add(this.textBox3);
+            this.panel15.Controls.Add(this.PasswordTextBox);
             this.panel15.ForeColor = System.Drawing.Color.White;
             this.panel15.Location = new System.Drawing.Point(7, 46);
             this.panel15.Name = "panel15";
@@ -224,13 +224,13 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox LoginTextBox;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox PasswordTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel9;
