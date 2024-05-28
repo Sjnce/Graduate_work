@@ -27,7 +27,11 @@ namespace Graduate_work
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            GuestsForm guestsform = new GuestsForm(); // Создание экземпляра второй формы
+            guestsform.TopLevel = false; // Установка TopLevel в false, чтобы форма не была самостоятельным окном
+            guestsform.AutoScroll = true; // Включение автопрокрутки, если это необходимо
+            panel2.Controls.Add(guestsform); // Добавление второй формы в panel1
+            guestsform.Show(); // Отображение второй формы
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -38,6 +42,18 @@ namespace Graduate_work
         private void MainForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            InForm inForm = new InForm(); //переход в форму для роли менеджера
+            inForm.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e) //кнопка свёртывания окна
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

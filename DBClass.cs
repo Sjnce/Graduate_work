@@ -10,9 +10,9 @@ namespace Graduate_work
 {
     internal class DBClass 
     {
-        MySqlConnection conn = new MySqlConnection(@"server=localhost;port=3306;username=root;password=root;database=graduate_workdb");
+        MySqlConnection conn = new MySqlConnection(@"server=localhost;port=3306;username=root;password=root;database=graduate_workdb"); //подключение к бд
 
-        public void ConnectionDB()
+        public void ConnectionDB() //метод для подключение к бд
         {
             if(conn.State == System.Data.ConnectionState.Closed)
             {
@@ -28,34 +28,9 @@ namespace Graduate_work
             }
         } 
 
-        public MySqlConnection getConnection() //метод возвращает строку подключения
+        public MySqlConnection GetConnection() //метод возвращает строку подключения
         {
             return conn;
         }
-
-        /*
-        static string DBConnect = "server=localhost;port=3306;username=root;password=root;database=graduate_workdb"; //подключение к бд
-        static public MySqlDataAdapter msDataAdapter;
-        static MySqlConnection myconnect;
-        static public MySqlCommand msCommand;
-
-        public static bool ConnectionDB() //метод для подключения к бд
-        {
-            try
-            {
-                myconnect = new MySqlConnection(DBConnect);
-                myconnect.Open();
-                msCommand = new MySqlCommand();
-                msCommand.Connection = myconnect;
-                msDataAdapter = new MySqlDataAdapter(msCommand);
-                return true;
-            }
-            catch
-            {
-                MessageBox.Show("Ошибка соединения с базой данных!");
-                return false;
-            }
-        }
-        */
     }
 }

@@ -9,17 +9,16 @@ using MySql.Data.MySqlClient;
 
 namespace Graduate_work
 {
-    public static class AuthorizationClass
+    internal class AuthorizationClass
     {
         static public string post, name, user;
 
         static public void Authorization(string log, string pass)
         {
-            string connectionString = "server=localhost;port=3306;username=root;password=root;database=graduate_workdb"; // Замените на вашу строку подключения
-
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            DBClass dbclass = new DBClass(); //используем методы из класса DBClass
+            using (MySqlConnection connection = dbclass.GetConnection()) //используем метод GetConnection() из класса DBClass
             {
-                string query = "SELECT * FROM staff WHERE login = @login and password = @password";
+                string query = "SELECT login, password FROM staff WHERE login = @login and password = @password";
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@login", log);
                 command.Parameters.AddWithValue("@password", pass);
@@ -49,9 +48,8 @@ namespace Graduate_work
 
         static public string AuthorizationName(string login)
         {
-            string connectionString = "server=localhost;port=3306;username=root;password=root;database=graduate_workdb"; // Замените на вашу строку подключения
-
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            DBClass dbclass = new DBClass(); //используем методы из класса DBClass
+            using (MySqlConnection connection = dbclass.GetConnection()) //используем метод GetConnection() из класса DBClass
             {
                 string query = "SELECT name FROM staff WHERE login = @login";
                 MySqlCommand command = new MySqlCommand(query, connection);

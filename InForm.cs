@@ -16,7 +16,7 @@ namespace Graduate_work
 {
     public partial class InForm : Form
     {
-        DBClass dbclass = new DBClass();
+        DBClass dbclass = new DBClass(); //используем методы из класса DBClass
 
         static public string loginActive;
         static public string whois;
@@ -30,7 +30,7 @@ namespace Graduate_work
         {
             if (LoginTextBox.Text != "" && PasswordTextBox.Text != "") //если текстбоксы логина и пароля пустые, то код читается дальше
             {
-                AuthorizationClass.Authorization(LoginTextBox.Text, PasswordTextBox.Text);
+                AuthorizationClass.Authorization(LoginTextBox.Text, PasswordTextBox.Text); //используем методы из класса AuthorizationClass
                 switch (AuthorizationClass.post)
                 {
                     case null:
@@ -38,20 +38,19 @@ namespace Graduate_work
                             MessageBox.Show("Такого аккаунта не существует!", "Проверте данные и попробуйте снова."); //выдаёт при введении данных в текстбоксы которых нет в бд
                             break;
                         }
-                    case "Администратор": //роль администратора
+                    case "admin": //роль администратора
                         {
                             loginActive = LoginTextBox.Text;
                             whois = "Администратор";
                             AuthorizationClass.user = LoginTextBox.Text;
                             string name = AuthorizationClass.AuthorizationName(LoginTextBox.Text);
                             AuthorizationClass.name = name;
-                            MessageBox.Show(name + ", добро пожаловать в меню администратора!"); //встречающее сообщение для роли администратора
                             this.Hide();
-                            HomeForm homeForm = new HomeForm(); //переход в форму для роли администратора
-                            homeForm.Show();
+                            MainForm mainForm = new MainForm(); //переход в форму для роли администратора
+                            mainForm.Show();
                             break;
                         }
-                    case "Менеджер": //роль менеджера
+                    case "user": //роль менеджера
                         {
                             loginActive = LoginTextBox.Text;
                             whois = "Менеджер";
@@ -84,6 +83,11 @@ namespace Graduate_work
         private void InForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e) //кнопка свёртывания окна
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
