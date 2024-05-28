@@ -10,12 +10,36 @@ namespace Graduate_work
 {
     internal class DBClass 
     {
-        static string DBConnect = "server=localhost;port=3306;username=root;password=root;database=graduate_workdb";
+        MySqlConnection conn = new MySqlConnection(@"server=localhost;port=3306;username=root;password=root;database=graduate_workdb");
+
+        public void ConnectionDB()
+        {
+            if(conn.State == System.Data.ConnectionState.Closed)
+            {
+                conn.Open();
+            }
+        }
+
+        public void CleseDB() //метод для выхода из бд
+        {
+            if (conn.State == System.Data.ConnectionState.Open)
+            {
+                conn.Close();
+            }
+        } 
+
+        public MySqlConnection getConnection() //метод возвращает строку подключения
+        {
+            return conn;
+        }
+
+        /*
+        static string DBConnect = "server=localhost;port=3306;username=root;password=root;database=graduate_workdb"; //подключение к бд
         static public MySqlDataAdapter msDataAdapter;
         static MySqlConnection myconnect;
         static public MySqlCommand msCommand;
 
-        public static bool ConnectionDB()
+        public static bool ConnectionDB() //метод для подключения к бд
         {
             try
             {
@@ -32,15 +56,6 @@ namespace Graduate_work
                 return false;
             }
         }
-
-        public static void CleseDB()
-        {
-            myconnect.Close();
-        }
-
-        public MySqlConnection getConnection()
-        {
-            return myconnect;
-        }
+        */
     }
 }

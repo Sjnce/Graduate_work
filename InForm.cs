@@ -16,8 +16,11 @@ namespace Graduate_work
 {
     public partial class InForm : Form
     {
+        DBClass dbclass = new DBClass();
+
         static public string loginActive;
         static public string whois;
+
         public InForm()
         {
             InitializeComponent();
@@ -25,30 +28,30 @@ namespace Graduate_work
 
         private void button1_Click(object sender, EventArgs e) //кнопка "вход"
         {
-            if (LoginTextBox.Text != "" && PasswordTextBox.Text != "")
+            if (LoginTextBox.Text != "" && PasswordTextBox.Text != "") //если текстбоксы логина и пароля пустые, то код читается дальше
             {
                 AuthorizationClass.Authorization(LoginTextBox.Text, PasswordTextBox.Text);
                 switch (AuthorizationClass.post)
                 {
                     case null:
                         {
-                            MessageBox.Show("Такого аккаунта не существует!", "Проверте данные и попробуйте снова.");
+                            MessageBox.Show("Такого аккаунта не существует!", "Проверте данные и попробуйте снова."); //выдаёт при введении данных в текстбоксы которых нет в бд
                             break;
                         }
-                    case "Администратор":
+                    case "Администратор": //роль администратора
                         {
                             loginActive = LoginTextBox.Text;
                             whois = "Администратор";
                             AuthorizationClass.user = LoginTextBox.Text;
                             string name = AuthorizationClass.AuthorizationName(LoginTextBox.Text);
                             AuthorizationClass.name = name;
-                            MessageBox.Show(name + ", добро пожаловать в меню администратора!");
+                            MessageBox.Show(name + ", добро пожаловать в меню администратора!"); //встречающее сообщение для роли администратора
                             this.Hide();
-                            HomeForm homeForm = new HomeForm();
+                            HomeForm homeForm = new HomeForm(); //переход в форму для роли администратора
                             homeForm.Show();
                             break;
                         }
-                    case "Менеджер":
+                    case "Менеджер": //роль менеджера
                         {
                             loginActive = LoginTextBox.Text;
                             whois = "Менеджер";
@@ -56,7 +59,7 @@ namespace Graduate_work
                             string name = AuthorizationClass.AuthorizationName(LoginTextBox.Text);
                             AuthorizationClass.name = name;
                             this.Hide();
-                            MainForm mainForm = new MainForm();
+                            MainForm mainForm = new MainForm(); //переход в форму для роли менеджера
                             mainForm.Show();
                             break;
                         }
@@ -64,16 +67,21 @@ namespace Graduate_work
             }
             else
             {
-                MessageBox.Show("Заполните все обязательные поля!");
+                MessageBox.Show("Заполните все обязательные поля!"); //выводится при не заполнении текстбоксов (одного и/или двух)
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) //кнопка выхода из программы
         {
-            Application.Exit(); //кнопка выхода из программы
+            Application.Exit(); 
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InForm_Load(object sender, EventArgs e)
         {
 
         }

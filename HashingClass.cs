@@ -12,7 +12,7 @@ namespace Graduate_work
     {
         public string Hash(string input)
         {
-            using (var sha256 = SHA1.Create())
+            using (var sha256 = SHA1.Create()) //использование хеширования 256
             {
                 byte[] passwordByte = Encoding.UTF8.GetBytes(input); //преобразование строки в байты
                 byte[] hash = sha256.ComputeHash(passwordByte); //хеширование
