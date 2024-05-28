@@ -95,7 +95,7 @@ namespace Graduate_work
 
             for (int index = 0; index < dataGridView1.Rows.Count; index++) //цикл
             {
-                var rowState = (RowState)dataGridView1.Rows[index].Cells[5].Value; //сомнительно но окей (потом подумать над этим всем)
+                var rowState = (RowState)dataGridView1.Rows[index].Cells[5].Value; 
 
                 if (rowState == RowState.Existed)
                     continue;
@@ -125,16 +125,31 @@ namespace Graduate_work
 
             if (dataGridView1.Rows[index].Cells[0].Value.ToString() == string.Empty)
             {
-                dataGridView1.Rows[index].Cells[4].Value = RowState.Deleted;
+                dataGridView1.Rows[index].Cells[5].Value = RowState.Deleted;
                 return;
             }
 
-            dataGridView1.Rows[index].Cells[4].Value = RowState.Deleted;
+            dataGridView1.Rows[index].Cells[5].Value = RowState.Deleted;
         }
 
         private void DelButton_Click(object sender, EventArgs e) //кнопка "Удалить"
         {
             deleteRow();
+        }
+
+        private void Change() //метод изменения таблицы в датагриде
+        {
+            var selectedRowIndex = dataGridView1.CurrentCell.RowIndex;
+            var id = IDGuestsTextBox.Text; //столбец с ID
+            var name = NameGuestsTextBox.Text; //столбец с именем
+            var phone = PhoneGuestsTextBox.Text; //столбец с номером телефона
+            var mail = MailGuestsTextBox.Text; //столбец с электронноц почтой
+            var info = InfoGuestsTextBox.Text; //столбец с доп. информацией
+
+            if (dataGridView1.Rows[selectedRowIndex].Cells[0].Value.ToString() != string.Empty)
+            {
+                dataGridView1.Rows[selectedRowIndex].SetValues(id, name, phone, mail, info);
+            }
         }
 
         private void EditButton_Click(object sender, EventArgs e)
