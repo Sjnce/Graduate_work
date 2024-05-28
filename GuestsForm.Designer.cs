@@ -50,6 +50,7 @@
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.ClearButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -232,6 +233,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(165)))), ((int)(((byte)(38)))));
+            this.panel2.Controls.Add(this.ClearButton);
+            this.panel2.Controls.Add(this.UpdateButton);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.SearchTextBox);
             this.panel2.Location = new System.Drawing.Point(845, 12);
@@ -242,23 +245,24 @@
             // UpdateButton
             // 
             this.UpdateButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(165)))), ((int)(((byte)(38)))));
+            this.UpdateButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("UpdateButton.BackgroundImage")));
+            this.UpdateButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.UpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UpdateButton.Font = new System.Drawing.Font("Impact", 17F);
             this.UpdateButton.ForeColor = System.Drawing.Color.White;
-            this.UpdateButton.Location = new System.Drawing.Point(845, 455);
+            this.UpdateButton.Location = new System.Drawing.Point(48, 9);
             this.UpdateButton.Name = "UpdateButton";
-            this.UpdateButton.Size = new System.Drawing.Size(328, 52);
+            this.UpdateButton.Size = new System.Drawing.Size(33, 33);
             this.UpdateButton.TabIndex = 10;
-            this.UpdateButton.Text = "Обновить таблицу";
             this.UpdateButton.UseVisualStyleBackColor = false;
             this.UpdateButton.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // SearchTextBox
             // 
-            this.SearchTextBox.Location = new System.Drawing.Point(48, 9);
+            this.SearchTextBox.Location = new System.Drawing.Point(130, 9);
             this.SearchTextBox.Multiline = true;
             this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(272, 33);
+            this.SearchTextBox.Size = new System.Drawing.Size(190, 33);
             this.SearchTextBox.TabIndex = 11;
             this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
             // 
@@ -266,7 +270,7 @@
             // 
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel3.Location = new System.Drawing.Point(9, 9);
+            this.panel3.Location = new System.Drawing.Point(91, 9);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(33, 33);
             this.panel3.TabIndex = 12;
@@ -274,10 +278,25 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(165)))), ((int)(((byte)(38)))));
-            this.panel4.Location = new System.Drawing.Point(845, 513);
+            this.panel4.Location = new System.Drawing.Point(845, 455);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(328, 80);
+            this.panel4.Size = new System.Drawing.Size(328, 138);
             this.panel4.TabIndex = 11;
+            // 
+            // ClearButton
+            // 
+            this.ClearButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(165)))), ((int)(((byte)(38)))));
+            this.ClearButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ClearButton.BackgroundImage")));
+            this.ClearButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClearButton.Font = new System.Drawing.Font("Impact", 17F);
+            this.ClearButton.ForeColor = System.Drawing.Color.White;
+            this.ClearButton.Location = new System.Drawing.Point(9, 9);
+            this.ClearButton.Name = "ClearButton";
+            this.ClearButton.Size = new System.Drawing.Size(33, 33);
+            this.ClearButton.TabIndex = 12;
+            this.ClearButton.UseVisualStyleBackColor = false;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // GuestsForm
             // 
@@ -285,7 +304,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1185, 605);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.UpdateButton);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.SaveButton);
@@ -329,5 +347,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox SearchTextBox;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button ClearButton;
     }
 }

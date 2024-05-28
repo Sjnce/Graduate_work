@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddGuestsForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
@@ -42,6 +43,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +58,7 @@
             this.panel1.Controls.Add(this.button3);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(801, 41);
+            this.panel1.Size = new System.Drawing.Size(701, 41);
             this.panel1.TabIndex = 1;
             // 
             // label3
@@ -74,7 +76,7 @@
             // 
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(726, 3);
+            this.button4.Location = new System.Drawing.Point(626, 3);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(35, 35);
             this.button4.TabIndex = 6;
@@ -86,7 +88,7 @@
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(763, 3);
+            this.button3.Location = new System.Drawing.Point(663, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(35, 35);
             this.button3.TabIndex = 5;
@@ -100,7 +102,7 @@
             this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveButton.Font = new System.Drawing.Font("Impact", 17F);
             this.SaveButton.ForeColor = System.Drawing.Color.White;
-            this.SaveButton.Location = new System.Drawing.Point(236, 274);
+            this.SaveButton.Location = new System.Drawing.Point(9, 302);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(328, 52);
             this.SaveButton.TabIndex = 9;
@@ -119,9 +121,9 @@
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Location = new System.Drawing.Point(236, 152);
+            this.panel3.Location = new System.Drawing.Point(9, 49);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(328, 116);
+            this.panel3.Size = new System.Drawing.Size(328, 247);
             this.panel3.TabIndex = 10;
             // 
             // InfoGuestsTextBox
@@ -192,14 +194,24 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "Номер телефона:";
             // 
+            // panel9
+            // 
+            this.panel9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel9.BackgroundImage")));
+            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel9.Location = new System.Drawing.Point(346, 39);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(354, 327);
+            this.panel9.TabIndex = 16;
+            // 
             // AddGuestsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel3);
+            this.ClientSize = new System.Drawing.Size(700, 362);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel9);
+            this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddGuestsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -228,5 +240,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel9;
     }
 }

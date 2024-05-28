@@ -41,6 +41,16 @@ namespace Graduate_work
             dataGridView1.Columns.Add("IsNew", string.Empty); //пустая строка
         }
 
+        private void ClearFields() 
+        {
+            IDGuestsTextBox.Text = "";
+            NameGuestsTextBox.Text = "";
+            PhoneGuestsTextBox.Text = "";
+            MailGuestsTextBox.Text = "";
+            InfoGuestsTextBox.Text = "";
+        }
+
+
         private void ReadSingRow(DataGridView dgv, IDataRecord record) //столбцы таблицы из бд в датагриде
         {
             dgv.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), 
@@ -108,6 +118,20 @@ namespace Graduate_work
                     var command = new MySqlCommand(deleteQuery, dbclass.GetConnection());
                     command.ExecuteNonQuery();
                 }
+
+                if(rowState == RowState.Modified)
+                {
+                    var id = dataGridView1.Rows[index].Cells[0].Value.ToString();
+                    var name = dataGridView1.Rows[index].Cells[1].Value.ToString();
+                    var phone = dataGridView1.Rows[index].Cells[2].Value.ToString();
+                    var mail = dataGridView1.Rows[index].Cells[3].Value.ToString();
+                    var info = dataGridView1.Rows[index].Cells[4].Value.ToString();
+
+                    var changeQuery = $"update сustomers set name = '{name}', phone = '{phone}', mail = '{mail}', info = '{info}' WHERE id_сustomers = '{id}'";
+
+                    var command = new MySqlCommand(changeQuery, dbclass.GetConnection());
+                    command.ExecuteNonQuery();
+                }
             }
 
             dbclass.CleseDB();
@@ -135,6 +159,7 @@ namespace Graduate_work
         private void DelButton_Click(object sender, EventArgs e) //кнопка "Удалить"
         {
             deleteRow();
+            ClearFields();
         }
 
         private void Change() //метод изменения таблицы в датагриде
@@ -149,12 +174,14 @@ namespace Graduate_work
             if (dataGridView1.Rows[selectedRowIndex].Cells[0].Value.ToString() != string.Empty)
             {
                 dataGridView1.Rows[selectedRowIndex].SetValues(id, name, phone, mail, info);
+                dataGridView1.Rows[selectedRowIndex].Cells[5].Value = RowState.Modified;
             }
         }
 
-        private void EditButton_Click(object sender, EventArgs e)
+        private void EditButton_Click(object sender, EventArgs e) //кнопка "Изменить"
         {
-
+            Change();
+            ClearFields();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) //при нажатии на строку в таблице, инормация из таблицы появляется в текстбоксах
@@ -174,6 +201,7 @@ namespace Graduate_work
         private void button1_Click_1(object sender, EventArgs e) //обновление отображения таблиц в датагриде
         {
             RefreshDataGrid(dataGridView1);
+            ClearFields();
         }
 
         private void Search(DataGridView dgv) //метод поиска в датагриде с помощью текстбокса
@@ -195,6 +223,11 @@ namespace Graduate_work
         private void SearchTextBox_TextChanged(object sender, EventArgs e) //текстбокс для поиска в датагриде
         {
             Search(dataGridView1);
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            ClearFields();
         }
     }
 }
