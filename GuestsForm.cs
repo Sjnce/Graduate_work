@@ -95,7 +95,7 @@ namespace Graduate_work
 
             for (int index = 0; index < dataGridView1.Rows.Count; index++) //цикл
             {
-                var rowState = (RowState)dataGridView1.Rows[index].Cells[4].Value;
+                var rowState = (RowState)dataGridView1.Rows[index].Cells[5].Value; //сомнительно но окей (потом подумать над этим всем)
 
                 if (rowState == RowState.Existed)
                     continue;
