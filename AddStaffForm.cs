@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,29 +8,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace Graduate_work
 {
-    public partial class AddGuestsForm : Form
+    public partial class AddStaffForm : Form
     {
         DBClass dbclass = new DBClass(); //используем методы из класса DBClass
 
-        public AddGuestsForm()
+        public AddStaffForm()
         {
             InitializeComponent();
         }
 
-        private void SaveButton_Click(object sender, EventArgs e) //кнопка для добавления в бд данных
+        private void SaveButton_Click(object sender, EventArgs e)
         {
             dbclass.ConnectionDB(); //открытие подключения с бд
 
-            var name = NameGuestsTextBox.Text; //столбец с именем
-            var phone = PhoneGuestsTextBox.Text; //столбец с номером телефона
-            var mail = MailGuestsTextBox.Text; //столбец с электронноц почтой
-            var info = InfoGuestsTextBox.Text; //столбец с доп. информацией
+            var name = NameStaffTextBox.Text; //столбец с ф.и.о.
+            var post = PostTextBox.Text; //столбец с должностью
+            var salary = SalaryTextBox.Text; //столбец с зарплатой
+            var date = Date_of_hiringTextBox.Text; //столбец с датой найма
+            var mail = MailStaffTextBox.Text; //столбец с электронноц почтой
+            var phone = PhoneStaffTextBox.Text; //столбец с номером телефона
+            var pas = PasStaffTextBox.Text; //столбец с паролем
+            var log = LogStaffTextBox.Text; //столбец с логином
 
-            var addQuery = $"insert into сustomers (name, phone, mail, info) values ('{name}','{phone}','{mail}','{info}')"; //SQL запрос
+            var addQuery = $"insert into staff (name, post, salary, date_of_hiring, mail, phone, password, login)" +
+                $" values ('{name}','{post}','{salary}','{date}','{mail}','{phone}','{pas}','{log}')"; //SQL запрос
             var command = new MySqlCommand(addQuery, dbclass.GetConnection()); //SQL комманды для запроса
             command.ExecuteNonQuery();
 
@@ -46,11 +51,6 @@ namespace Graduate_work
         private void button4_Click(object sender, EventArgs e) //кнопка свёртывания окна
         {
             this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void PhoneGuestsTextBox_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

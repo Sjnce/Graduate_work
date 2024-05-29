@@ -31,7 +31,7 @@ namespace Graduate_work
             if (LoginTextBox.Text != "" && PasswordTextBox.Text != "") //если текстбоксы логина и пароля пустые, то код читается дальше
             {
                 AuthorizationClass.Authorization(LoginTextBox.Text, PasswordTextBox.Text); //используем методы из класса AuthorizationClass
-                switch (AuthorizationClass.post)
+                switch (AuthorizationClass.post) //используем методы из класса AuthorizationClass
                 {
                     case null:
                         {
@@ -42,9 +42,9 @@ namespace Graduate_work
                         {
                             loginActive = LoginTextBox.Text;
                             whois = "Администратор";
-                            AuthorizationClass.user = LoginTextBox.Text;
-                            string name = AuthorizationClass.AuthorizationName(LoginTextBox.Text);
-                            AuthorizationClass.name = name;
+                            AuthorizationClass.user = LoginTextBox.Text; //используем методы из класса AuthorizationClass
+                            string name = AuthorizationClass.AuthorizationName(LoginTextBox.Text); //используем методы из класса AuthorizationClass
+                            AuthorizationClass.name = name; //используем методы из класса AuthorizationClass
                             this.Hide();
                             MainForm mainForm = new MainForm(); //переход в форму для роли администратора
                             mainForm.Show();
@@ -54,9 +54,9 @@ namespace Graduate_work
                         {
                             loginActive = LoginTextBox.Text;
                             whois = "Менеджер";
-                            AuthorizationClass.user = LoginTextBox.Text;
-                            string name = AuthorizationClass.AuthorizationName(LoginTextBox.Text);
-                            AuthorizationClass.name = name;
+                            AuthorizationClass.user = LoginTextBox.Text; //используем методы из класса AuthorizationClass
+                            string name = AuthorizationClass.AuthorizationName(LoginTextBox.Text); //используем методы из класса AuthorizationClass
+                            AuthorizationClass.name = name; //используем методы из класса AuthorizationClass
                             this.Hide();
                             MainForm mainForm = new MainForm(); //переход в форму для роли менеджера
                             mainForm.Show();
@@ -88,6 +88,16 @@ namespace Graduate_work
         private void button4_Click(object sender, EventArgs e) //кнопка свёртывания окна
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void label2_Click(object sender, EventArgs e) //надпись "пароль"
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e) //надпись "логин"
+        {
+
         }
     }
 }

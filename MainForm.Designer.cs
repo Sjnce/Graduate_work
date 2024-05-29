@@ -39,6 +39,8 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.AdminPanel = new System.Windows.Forms.Panel();
+            this.UserPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,6 +112,7 @@
             this.button2.Size = new System.Drawing.Size(128, 75);
             this.button2.TabIndex = 3;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -122,6 +125,7 @@
             this.button1.Size = new System.Drawing.Size(128, 75);
             this.button1.TabIndex = 4;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button5
             // 
@@ -147,6 +151,7 @@
             this.button6.Size = new System.Drawing.Size(128, 75);
             this.button6.TabIndex = 6;
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -162,14 +167,32 @@
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
+            // AdminPanel
+            // 
+            this.AdminPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(165)))), ((int)(((byte)(38)))));
+            this.AdminPanel.Location = new System.Drawing.Point(9, 369);
+            this.AdminPanel.Name = "AdminPanel";
+            this.AdminPanel.Size = new System.Drawing.Size(127, 182);
+            this.AdminPanel.TabIndex = 0;
+            // 
+            // UserPanel
+            // 
+            this.UserPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(165)))), ((int)(((byte)(38)))));
+            this.UserPanel.Location = new System.Drawing.Point(9, 288);
+            this.UserPanel.Name = "UserPanel";
+            this.UserPanel.Size = new System.Drawing.Size(127, 263);
+            this.UserPanel.TabIndex = 7;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1328, 639);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.UserPanel);
+            this.Controls.Add(this.AdminPanel);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button2);
@@ -198,5 +221,7 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel AdminPanel;
+        private System.Windows.Forms.Panel UserPanel;
     }
 }

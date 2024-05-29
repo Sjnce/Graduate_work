@@ -33,9 +33,9 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(-3, -2);
+            this.panel1.Location = new System.Drawing.Point(-2, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(807, 229);
+            this.panel1.Size = new System.Drawing.Size(804, 229);
             this.panel1.TabIndex = 0;
             // 
             // HomeForm

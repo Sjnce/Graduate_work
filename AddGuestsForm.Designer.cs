@@ -146,6 +146,7 @@
             this.PhoneGuestsTextBox.Name = "PhoneGuestsTextBox";
             this.PhoneGuestsTextBox.Size = new System.Drawing.Size(190, 20);
             this.PhoneGuestsTextBox.TabIndex = 8;
+            this.PhoneGuestsTextBox.TextChanged += new System.EventHandler(this.PhoneGuestsTextBox_TextChanged);
             // 
             // NameGuestsTextBox
             // 

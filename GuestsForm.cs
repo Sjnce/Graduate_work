@@ -22,8 +22,8 @@ namespace Graduate_work
 
     public partial class GuestsForm : Form
     {
-        DBClass dbclass = new DBClass();
 
+        DBClass dbclass = new DBClass(); //используем методы из класса DBClass
         int selectedRow;
 
         public GuestsForm()
@@ -49,7 +49,6 @@ namespace Graduate_work
             MailGuestsTextBox.Text = "";
             InfoGuestsTextBox.Text = "";
         }
-
 
         private void ReadSingRow(DataGridView dgv, IDataRecord record) //столбцы таблицы из бд в датагриде
         {
@@ -166,7 +165,7 @@ namespace Graduate_work
         {
             var selectedRowIndex = dataGridView1.CurrentCell.RowIndex;
             var id = IDGuestsTextBox.Text; //столбец с ID
-            var name = NameGuestsTextBox.Text; //столбец с именем
+            var name = NameGuestsTextBox.Text; //столбец с ф.и.о.
             var phone = PhoneGuestsTextBox.Text; //столбец с номером телефона
             var mail = MailGuestsTextBox.Text; //столбец с электронноц почтой
             var info = InfoGuestsTextBox.Text; //столбец с доп. информацией
@@ -225,9 +224,24 @@ namespace Graduate_work
             Search(dataGridView1);
         }
 
-        private void ClearButton_Click(object sender, EventArgs e)
+        private void ClearButton_Click(object sender, EventArgs e) //кнопка чистки тесктбоксов
         {
             ClearFields();
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
