@@ -60,11 +60,12 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(50)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 9);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(827, 581);
+            this.dataGridView1.Size = new System.Drawing.Size(844, 587);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -82,7 +83,7 @@
             this.panel1.Controls.Add(this.PhoneGuestsLabel);
             this.panel1.Controls.Add(this.IDGuestsLabel);
             this.panel1.Controls.Add(this.IDGuestsTextBox);
-            this.panel1.Location = new System.Drawing.Point(845, 70);
+            this.panel1.Location = new System.Drawing.Point(850, 67);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(328, 147);
             this.panel1.TabIndex = 1;
@@ -181,7 +182,7 @@
             this.NewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.NewButton.Font = new System.Drawing.Font("Impact", 17F);
             this.NewButton.ForeColor = System.Drawing.Color.White;
-            this.NewButton.Location = new System.Drawing.Point(845, 223);
+            this.NewButton.Location = new System.Drawing.Point(850, 220);
             this.NewButton.Name = "NewButton";
             this.NewButton.Size = new System.Drawing.Size(328, 52);
             this.NewButton.TabIndex = 2;
@@ -195,7 +196,7 @@
             this.DelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DelButton.Font = new System.Drawing.Font("Impact", 17F);
             this.DelButton.ForeColor = System.Drawing.Color.White;
-            this.DelButton.Location = new System.Drawing.Point(845, 339);
+            this.DelButton.Location = new System.Drawing.Point(850, 336);
             this.DelButton.Name = "DelButton";
             this.DelButton.Size = new System.Drawing.Size(328, 52);
             this.DelButton.TabIndex = 6;
@@ -209,7 +210,7 @@
             this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveButton.Font = new System.Drawing.Font("Impact", 17F);
             this.SaveButton.ForeColor = System.Drawing.Color.White;
-            this.SaveButton.Location = new System.Drawing.Point(845, 397);
+            this.SaveButton.Location = new System.Drawing.Point(850, 394);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(328, 52);
             this.SaveButton.TabIndex = 7;
@@ -223,7 +224,7 @@
             this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditButton.Font = new System.Drawing.Font("Impact", 17F);
             this.EditButton.ForeColor = System.Drawing.Color.White;
-            this.EditButton.Location = new System.Drawing.Point(845, 281);
+            this.EditButton.Location = new System.Drawing.Point(850, 278);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(328, 52);
             this.EditButton.TabIndex = 8;
@@ -238,7 +239,7 @@
             this.panel2.Controls.Add(this.UpdateButton);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.SearchTextBox);
-            this.panel2.Location = new System.Drawing.Point(845, 12);
+            this.panel2.Location = new System.Drawing.Point(850, 9);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(328, 52);
             this.panel2.TabIndex = 9;
@@ -295,9 +296,9 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(165)))), ((int)(((byte)(38)))));
-            this.panel4.Location = new System.Drawing.Point(845, 455);
+            this.panel4.Location = new System.Drawing.Point(850, 452);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(328, 138);
+            this.panel4.Size = new System.Drawing.Size(328, 144);
             this.panel4.TabIndex = 11;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 

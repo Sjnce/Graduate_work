@@ -59,6 +59,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(165)))), ((int)(((byte)(38)))));
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.LogStaffTextBox);
             this.panel3.Controls.Add(this.PasStaffTextBox);
             this.panel3.Controls.Add(this.PhoneStaffTextBox);
@@ -298,6 +299,7 @@
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddStaffForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddStaffForm";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

@@ -170,6 +170,7 @@
             // AdminPanel
             // 
             this.AdminPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(165)))), ((int)(((byte)(38)))));
+            this.AdminPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.AdminPanel.Location = new System.Drawing.Point(9, 369);
             this.AdminPanel.Name = "AdminPanel";
             this.AdminPanel.Size = new System.Drawing.Size(127, 182);
@@ -178,6 +179,7 @@
             // UserPanel
             // 
             this.UserPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(165)))), ((int)(((byte)(38)))));
+            this.UserPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.UserPanel.Location = new System.Drawing.Point(9, 288);
             this.UserPanel.Name = "UserPanel";
             this.UserPanel.Size = new System.Drawing.Size(127, 263);

@@ -18,6 +18,12 @@ namespace Graduate_work
         public MainForm()
         {
             InitializeComponent();
+            panel2.Controls.Clear(); //очистить все элементы управления из Panel2
+            HomeForm homeForm = new HomeForm(); //создание экземпляра второй формы
+            homeForm.TopLevel = false; //установка TopLevel в false, чтобы форма не была самостоятельным окном
+            homeForm.AutoScroll = true; //включение автопрокрутки, если это необходимо
+            panel2.Controls.Add(homeForm); //добавление второй формы в panel1
+            homeForm.Show(); //отображение второй формы
         }
 
         private void button3_Click(object sender, EventArgs e) //кнопка выхода из программы
@@ -93,10 +99,20 @@ namespace Graduate_work
 
         private void button2_Click(object sender, EventArgs e) //кнопка "Главная"
         {
-
+            panel2.Controls.Clear(); //очистить все элементы управления из Panel2
+            HomeForm homeForm = new HomeForm(); //создание экземпляра второй формы
+            homeForm.TopLevel = false; //установка TopLevel в false, чтобы форма не была самостоятельным окном
+            homeForm.AutoScroll = true; //включение автопрокрутки, если это необходимо
+            panel2.Controls.Add(homeForm); //добавление второй формы в panel1
+            homeForm.Show(); //отображение второй формы
         }
 
         private void button6_Click(object sender, EventArgs e) //кнопка "комнаты"
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
