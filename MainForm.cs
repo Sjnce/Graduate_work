@@ -109,7 +109,12 @@ namespace Graduate_work
 
         private void button6_Click(object sender, EventArgs e) //кнопка "комнаты"
         {
-
+            panel2.Controls.Clear(); //очистить все элементы управления из Panel2
+            RoomsForm roomsForm = new RoomsForm(); //создание экземпляра второй формы
+            roomsForm.TopLevel = false; //установка TopLevel в false, чтобы форма не была самостоятельным окном
+            roomsForm.AutoScroll = true; //включение автопрокрутки, если это необходимо
+            panel2.Controls.Add(roomsForm); //добавление второй формы в panel1
+            roomsForm.Show(); //отображение второй формы
         }
 
         private void label1_Click(object sender, EventArgs e)

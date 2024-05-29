@@ -67,9 +67,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(9, 6);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(118, 28);
+            this.label3.Size = new System.Drawing.Size(140, 28);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Holiday Inn";
+            this.label3.Text = "© Holiday Inn";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // button4

@@ -71,7 +71,6 @@ namespace Graduate_work
                 ReadSingRow(dgv, reader);
             }
             reader.Close(); //закрытие
-
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) //при нажатии на строку в таблице, инормация из таблицы появляется в текстбоксах
