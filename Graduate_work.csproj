@@ -200,7 +200,6 @@
     <Compile Include="GuestsForm.Designer.cs">
       <DependentUpon>GuestsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="HashingClass.cs" />
     <Compile Include="HomeForm.cs">
       <SubType>Form</SubType>
     </Compile>

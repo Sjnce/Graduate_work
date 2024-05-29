@@ -30,6 +30,8 @@ namespace Graduate_work
             dataGridView1.Columns.Add("сost", "Цена");
             dataGridView1.Columns.Add("availability", "Доступность");
             dataGridView1.Columns.Add("places", "На сколько человек");
+            dataGridView1.Columns.Add("withR", "Забронирован с");
+            dataGridView1.Columns.Add("beforeR", "Забронирован до");
             dataGridView1.Columns.Add("IsNew", string.Empty); //пустая строка
         }
         private void ClearFields()
@@ -39,11 +41,14 @@ namespace Graduate_work
             CostRoomsTextBox.Text = "";
             AvailabilityRoomsTextBox.Text = "";
             PlacesRoomsTextBox.Text = "";
+            textBox1.Text = "";
+            textBox2.Text = "";
+
         }
         private void ReadSingRow(DataGridView dgv, IDataRecord record) //столбцы таблицы из бд в датагриде
         {
-            dgv.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetInt32(2), 
-                record.GetString(3), record.GetString(4), RowState.ModifiedNew);
+            dgv.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetInt32(2), record.GetString(3), 
+                record.GetString(4), record.GetString(5), record.GetString(6), RowState.ModifiedNew);
         }
         private void RefreshDataGrid(DataGridView dgv) //столбцы таблицы из бд в датагриде
         {
@@ -68,7 +73,7 @@ namespace Graduate_work
         {
             dgv.Rows.Clear();
 
-            string searchString = $"SELECT * FROM rooms WHERE concat (id_rooms, type, cost, availability, place) like '%" + SearchTextBox.Text + "%'";
+            string searchString = $"SELECT * FROM rooms WHERE concat (id_rooms, type, cost, availability, place, withR, beforeR) like '%" + SearchTextBox.Text + "%'";
             MySqlCommand com = new MySqlCommand(searchString, dbclass.GetConnection());
             dbclass.ConnectionDB();
 
@@ -96,6 +101,8 @@ namespace Graduate_work
                 CostRoomsTextBox.Text = row.Cells[2].Value.ToString(); //цена
                 AvailabilityRoomsTextBox.Text = row.Cells[3].Value.ToString(); //доступность
                 PlacesRoomsTextBox.Text = row.Cells[4].Value.ToString(); //на сколько человек
+                textBox1.Text = row.Cells[5].Value.ToString(); //забронирован с
+                textBox2.Text = row.Cells[6].Value.ToString(); //забронирован до
             }
         }
 
@@ -117,7 +124,7 @@ namespace Graduate_work
 
             for (int index = 0; index < dataGridView1.Rows.Count; index++) //цикл
             {
-                var rowState = (RowState)dataGridView1.Rows[index].Cells[5].Value;
+                var rowState = (RowState)dataGridView1.Rows[index].Cells[7].Value;
 
                 if (rowState == RowState.Existed)
                     continue;
@@ -138,9 +145,12 @@ namespace Graduate_work
                     var сost = dataGridView1.Rows[index].Cells[2].Value.ToString();
                     var availability = dataGridView1.Rows[index].Cells[3].Value.ToString();
                     var places = dataGridView1.Rows[index].Cells[4].Value.ToString();
+                    var with = dataGridView1.Rows[index].Cells[5].Value.ToString();
+                    var before = dataGridView1.Rows[index].Cells[6].Value.ToString();
 
                     var changeQuery = $"update rooms set type = '{type}', сost = '{сost}', " +
-                        $"availability = '{availability}', places = '{places}', WHERE id_rooms = '{id}'";
+                        $"availability = '{availability}', place = '{places}', withR = '{with}', " +
+                        $"beforeR = '{before}', WHERE id_rooms = '{id}'";
 
                     var command = new MySqlCommand(changeQuery, dbclass.GetConnection());
                     command.ExecuteNonQuery();
@@ -161,11 +171,11 @@ namespace Graduate_work
 
             if (dataGridView1.Rows[index].Cells[0].Value.ToString() == string.Empty)
             {
-                dataGridView1.Rows[index].Cells[5].Value = RowState.Deleted;
+                dataGridView1.Rows[index].Cells[7].Value = RowState.Deleted;
                 return;
             }
 
-            dataGridView1.Rows[index].Cells[5].Value = RowState.Deleted;
+            dataGridView1.Rows[index].Cells[7].Value = RowState.Deleted;
         }
 
         private void DelButton_Click(object sender, EventArgs e) //кнопка "Удалить"
@@ -181,11 +191,13 @@ namespace Graduate_work
             var сost = CostRoomsTextBox.Text; //столбец с ценой номера
             var availability = AvailabilityRoomsTextBox.Text; //столбец с информацией о доступности номера
             var places = PlacesRoomsTextBox.Text; //столбец с информацией на сколько номер человек
+            var with = textBox1.Text; //столбец с информацией с какого числа забронирован номер
+            var before = textBox2.Text; //столбец с информацией до какого числа забронирован номер
 
             if (dataGridView1.Rows[selectedRowIndex].Cells[0].Value.ToString() != string.Empty)
             {
                 dataGridView1.Rows[selectedRowIndex].SetValues(id, type, сost, availability, places);
-                dataGridView1.Rows[selectedRowIndex].Cells[5].Value = RowState.Modified;
+                dataGridView1.Rows[selectedRowIndex].Cells[7].Value = RowState.Modified;
             }
         }
 

@@ -44,6 +44,10 @@
             this.TypeRoomsLabel = new System.Windows.Forms.Label();
             this.AvailabilityRoomsLabel = new System.Windows.Forms.Label();
             this.CostRoomsLabel = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -122,6 +126,10 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(165)))), ((int)(((byte)(38)))));
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.PlacesRoomsTextBox);
             this.panel2.Controls.Add(this.AvailabilityRoomsTextBox);
             this.panel2.Controls.Add(this.CostRoomsTextBox);
@@ -203,6 +211,40 @@
             this.CostRoomsLabel.TabIndex = 3;
             this.CostRoomsLabel.Text = "Цена:";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(129, 113);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(190, 20);
+            this.textBox1.TabIndex = 11;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(129, 139);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(190, 20);
+            this.textBox2.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(23, 116);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Забронирован с:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(16, 142);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(114, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Забронирован до:";
+            // 
             // AddRoomsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,5 +285,9 @@
         private System.Windows.Forms.Label TypeRoomsLabel;
         private System.Windows.Forms.Label AvailabilityRoomsLabel;
         private System.Windows.Forms.Label CostRoomsLabel;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

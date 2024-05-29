@@ -34,34 +34,46 @@ namespace Graduate_work
                 switch (AuthorizationClass.post) //используем методы из класса AuthorizationClass
                 {
                     case null:
-                        {
-                            MessageBox.Show("Такого аккаунта не существует!", "Проверте данные и попробуйте снова."); //выдаёт при введении данных в текстбоксы которых нет в бд
-                            break;
-                        }
+                    {
+                        MessageBox.Show("Такого аккаунта не существует!", "Проверте данные и попробуйте снова."); //выдаёт при введении данных в текстбоксы которых нет в бд
+                        break;
+                    }
                     case "admin": //роль администратора
-                        {
-                            loginActive = LoginTextBox.Text;
-                            whois = "Администратор";
-                            AuthorizationClass.user = LoginTextBox.Text; //используем методы из класса AuthorizationClass
-                            string name = AuthorizationClass.AuthorizationName(LoginTextBox.Text); //используем методы из класса AuthorizationClass
-                            AuthorizationClass.name = name; //используем методы из класса AuthorizationClass
-                            this.Hide();
-                            MainForm mainForm = new MainForm(); //переход в форму для роли администратора
-                            mainForm.Show();
-                            break;
-                        }
+                    {
+                        loginActive = LoginTextBox.Text;
+                        whois = "Администратор";
+                        AuthorizationClass.user = LoginTextBox.Text; //используем методы из класса AuthorizationClass
+                        string name = AuthorizationClass.AuthorizationName(LoginTextBox.Text); //используем методы из класса AuthorizationClass
+                        AuthorizationClass.name = name; //используем методы из класса AuthorizationClass
+                        this.Hide();
+                        MainForm mainForm = new MainForm(); //переход в форму для роли администратора
+                        mainForm.Show();
+                        break;
+                    }
                     case "user": //роль менеджера
-                        {
-                            loginActive = LoginTextBox.Text;
-                            whois = "Менеджер";
-                            AuthorizationClass.user = LoginTextBox.Text; //используем методы из класса AuthorizationClass
-                            string name = AuthorizationClass.AuthorizationName(LoginTextBox.Text); //используем методы из класса AuthorizationClass
-                            AuthorizationClass.name = name; //используем методы из класса AuthorizationClass
-                            this.Hide();
-                            MainForm mainForm = new MainForm(); //переход в форму для роли менеджера
-                            mainForm.Show();
-                            break;
-                        }
+                    {
+                        loginActive = LoginTextBox.Text;
+                        whois = "Менеджер";
+                        AuthorizationClass.user = LoginTextBox.Text; //используем методы из класса AuthorizationClass
+                        string name = AuthorizationClass.AuthorizationName(LoginTextBox.Text); //используем методы из класса AuthorizationClass
+                        AuthorizationClass.name = name; //используем методы из класса AuthorizationClass
+                        this.Hide();
+                        MainForm mainForm = new MainForm(); //переход в форму для роли менеджера
+                        mainForm.Show();
+                        break;
+                    }
+                    default:
+                    {
+                        loginActive = LoginTextBox.Text;
+                        whois = "Рабочий";
+                        AuthorizationClass.user = LoginTextBox.Text; //используем методы из класса AuthorizationClass
+                        string name = AuthorizationClass.AuthorizationName(LoginTextBox.Text); //используем методы из класса AuthorizationClass
+                        AuthorizationClass.name = name; //используем методы из класса AuthorizationClass
+                        this.Hide();
+                        MainForm mainForm = new MainForm(); //переход в форму для роли 
+                        mainForm.Show();
+                        break;
+                    }
                 }
             }
             else

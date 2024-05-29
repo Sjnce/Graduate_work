@@ -43,9 +43,12 @@ namespace Graduate_work
             var сost = CostRoomsTextBox.Text; //столбец с ценой номера
             var availability = AvailabilityRoomsTextBox.Text; //столбец с информацией свободен номер или нет
             var places = PlacesRoomsTextBox.Text; //столбец с информацией сколько человек в нем может поместиться
+            var with = textBox1.Text; //столбец с информацией о бронировании (с какого числа)
+            var before = textBox2.Text; //столбец с информацией о бронировании (до какого числа)
 
-            var addQuery = $"insert into rooms (type, сost, availability, places)" +
-                $" values ('{type}','{сost}','{availability}','{places}')"; //SQL запрос
+
+            var addQuery = $"insert into rooms (type, cost, availability, place, withR, beforeR)" +
+                $" values ('{type}','{сost}','{availability}','{places}','{with}','{before}')"; //SQL запрос
             var command = new MySqlCommand(addQuery, dbclass.GetConnection()); //SQL комманды для запроса
             command.ExecuteNonQuery();
 

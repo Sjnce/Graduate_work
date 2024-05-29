@@ -51,6 +51,10 @@
             this.IDRoomsTextBox = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.NewButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -59,9 +63,9 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(165)))), ((int)(((byte)(38)))));
-            this.panel4.Location = new System.Drawing.Point(850, 448);
+            this.panel4.Location = new System.Drawing.Point(850, 501);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(328, 148);
+            this.panel4.Size = new System.Drawing.Size(328, 95);
             this.panel4.TabIndex = 27;
             // 
             // panel2
@@ -130,7 +134,7 @@
             this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditButton.Font = new System.Drawing.Font("Impact", 17F);
             this.EditButton.ForeColor = System.Drawing.Color.White;
-            this.EditButton.Location = new System.Drawing.Point(850, 274);
+            this.EditButton.Location = new System.Drawing.Point(850, 327);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(328, 52);
             this.EditButton.TabIndex = 25;
@@ -144,7 +148,7 @@
             this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveButton.Font = new System.Drawing.Font("Impact", 17F);
             this.SaveButton.ForeColor = System.Drawing.Color.White;
-            this.SaveButton.Location = new System.Drawing.Point(850, 390);
+            this.SaveButton.Location = new System.Drawing.Point(850, 443);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(328, 52);
             this.SaveButton.TabIndex = 24;
@@ -158,7 +162,7 @@
             this.DelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DelButton.Font = new System.Drawing.Font("Impact", 17F);
             this.DelButton.ForeColor = System.Drawing.Color.White;
-            this.DelButton.Location = new System.Drawing.Point(850, 332);
+            this.DelButton.Location = new System.Drawing.Point(850, 385);
             this.DelButton.Name = "DelButton";
             this.DelButton.Size = new System.Drawing.Size(328, 52);
             this.DelButton.TabIndex = 23;
@@ -169,6 +173,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(165)))), ((int)(((byte)(38)))));
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.PlacesRoomsTextBox);
             this.panel1.Controls.Add(this.AvailabilityRoomsTextBox);
             this.panel1.Controls.Add(this.CostRoomsTextBox);
@@ -181,7 +189,7 @@
             this.panel1.Controls.Add(this.IDRoomsTextBox);
             this.panel1.Location = new System.Drawing.Point(850, 67);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(328, 143);
+            this.panel1.Size = new System.Drawing.Size(328, 196);
             this.panel1.TabIndex = 21;
             // 
             // PlacesRoomsTextBox
@@ -288,13 +296,47 @@
             this.NewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.NewButton.Font = new System.Drawing.Font("Impact", 17F);
             this.NewButton.ForeColor = System.Drawing.Color.White;
-            this.NewButton.Location = new System.Drawing.Point(850, 216);
+            this.NewButton.Location = new System.Drawing.Point(850, 269);
             this.NewButton.Name = "NewButton";
             this.NewButton.Size = new System.Drawing.Size(328, 52);
             this.NewButton.TabIndex = 22;
             this.NewButton.Text = "Новая запись";
             this.NewButton.UseVisualStyleBackColor = false;
             this.NewButton.Click += new System.EventHandler(this.NewButton_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(17, 169);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(114, 13);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Забронирован до:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(24, 143);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Забронирован с:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(130, 166);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(190, 20);
+            this.textBox2.TabIndex = 16;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(130, 140);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(190, 20);
+            this.textBox1.TabIndex = 15;
             // 
             // RoomsForm
             // 
@@ -346,5 +388,9 @@
         private System.Windows.Forms.TextBox IDRoomsTextBox;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button NewButton;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
