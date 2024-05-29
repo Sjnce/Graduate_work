@@ -33,7 +33,7 @@ namespace Graduate_work
 
         private void CreateColumns() //столбцы таблицы из бд в датагриде
         {
-            dataGridView1.Columns.Add("id_сustomers", "ID");
+            dataGridView1.Columns.Add("id_customers", "ID");
             dataGridView1.Columns.Add("name", "Ф.И.О.");
             dataGridView1.Columns.Add("phone", "Номер телефона");
             dataGridView1.Columns.Add("mail", "Электронная почта");
@@ -60,7 +60,7 @@ namespace Graduate_work
         {
             dgv.Rows.Clear(); //очистка
 
-            string queryString = $"SELECT * FROM сustomers"; //выбор всех строк в таблице гости
+            string queryString = $"SELECT * FROM customers"; //выбор всех строк в таблице гости
 
             MySqlCommand command = new MySqlCommand(queryString, dbclass.GetConnection());
 
@@ -73,7 +73,6 @@ namespace Graduate_work
                 ReadSingRow(dgv, reader);
             }
             reader.Close(); //закрытие
-
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -112,7 +111,7 @@ namespace Graduate_work
                 if (rowState == RowState.Deleted)
                 {
                     var id = Convert.ToInt32(dataGridView1.Rows[index].Cells[0].Value);
-                    var deleteQuery = $"delete FROM сustomers WHERE id_сustomers = {id}";
+                    var deleteQuery = $"delete FROM customers WHERE id_customers = {id}";
 
                     var command = new MySqlCommand(deleteQuery, dbclass.GetConnection());
                     command.ExecuteNonQuery();
@@ -126,7 +125,7 @@ namespace Graduate_work
                     var mail = dataGridView1.Rows[index].Cells[3].Value.ToString();
                     var info = dataGridView1.Rows[index].Cells[4].Value.ToString();
 
-                    var changeQuery = $"update сustomers set name = '{name}', phone = '{phone}', mail = '{mail}', info = '{info}' WHERE id_сustomers = '{id}'";
+                    var changeQuery = $"update customers set name = '{name}', phone = '{phone}', mail = '{mail}', info = '{info}' WHERE id_customers = '{id}'";
 
                     var command = new MySqlCommand(changeQuery, dbclass.GetConnection());
                     command.ExecuteNonQuery();
@@ -207,7 +206,7 @@ namespace Graduate_work
         {
             dgv.Rows.Clear();
 
-            string searchString = $"SELECT * FROM сustomers WHERE concat (id_сustomers, name, phone, mail, info) like '%" + SearchTextBox.Text + "%'";
+            string searchString = $"SELECT * FROM customers WHERE concat (id_customers, name, phone, mail, info) like '%" + SearchTextBox.Text + "%'";
             MySqlCommand com = new MySqlCommand(searchString, dbclass.GetConnection());
             dbclass.ConnectionDB();
 

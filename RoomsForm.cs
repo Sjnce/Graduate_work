@@ -68,7 +68,7 @@ namespace Graduate_work
         {
             dgv.Rows.Clear();
 
-            string searchString = $"SELECT * FROM rooms WHERE concat (id_rooms, type, сost, availability, places) like '%" + SearchTextBox.Text + "%'";
+            string searchString = $"SELECT * FROM rooms WHERE concat (id_rooms, type, cost, availability, place) like '%" + SearchTextBox.Text + "%'";
             MySqlCommand com = new MySqlCommand(searchString, dbclass.GetConnection());
             dbclass.ConnectionDB();
 

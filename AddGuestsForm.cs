@@ -29,7 +29,7 @@ namespace Graduate_work
             var mail = MailGuestsTextBox.Text; //столбец с электронноц почтой
             var info = InfoGuestsTextBox.Text; //столбец с доп. информацией
 
-            var addQuery = $"insert into сustomers (name, phone, mail, info) values ('{name}','{phone}','{mail}','{info}')"; //SQL запрос
+            var addQuery = $"insert into customers (name, phone, mail, info) values ('{name}','{phone}','{mail}','{info}')"; //SQL запрос
             var command = new MySqlCommand(addQuery, dbclass.GetConnection()); //SQL комманды для запроса
             command.ExecuteNonQuery();
 
